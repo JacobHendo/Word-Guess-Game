@@ -1,11 +1,18 @@
-<h1>Hangman<br>
-    Your favorite classroom pastime returns!</h1>
-  <p id="ratefeld"></p>
-  <form name="rateformular">
-  <input name="ratezeichen" type="text" size="5" maxlength="1">
-  <input name="ratebutton" type="button" value="Guess" onClick="pruefeZeichen()">
-  
-  <p id="gerateneBuchstaben">Wrong Letters:</p>
-  <img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"><br />
-  <input name="refresh" type="button" value="New Game" onClick="location.reload()">
-  </form>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <h1>Word: <span class="word-underscore-array"></span></h1>
+    <h3>Guess Remaining: <span class="remaining-guesses">0</span></h3>
+    <h4>Letters Guessed: <span class="letters-guessed"></span></h4>
+    <script src="assets/javascript/game.js" charset="utf-8"></script>
+  </body>
+</html>
