@@ -7,7 +7,7 @@
 // have event listener for keypress
 
 var wordBank = ["sun", "sand", "beach", "beer"]
-
+var wrongLetters = []
 var chosenWord = wordBank[Math.floor(Math.random() * wordBank.length)]
 
 var wordArray = chosenWord.split('')
@@ -29,13 +29,14 @@ $('.remaining-guesses').html(remainingGuesses)
 
 $(document).on('keyup', function(event){
   remainingGuesses--
-  
+  wrongLetters.push(event.key);
+  $(".letters-guessed").html(wrongLetters);
 
 
   for (var i = 0; i < wordArray.length; i++) {
     if (event.key == wordArray[i]){
       remainingGuesses++
-      //wordUnderscoreArray[i] = wordArray[i]
+      wordUnderscoreArray[i] = wordArray[i]
       $('.word-underscore-array').html(wordUnderscoreArray)
       setTimeout(function(){
         alert('you are right. ' + event.key + ' is in the word')
@@ -44,11 +45,15 @@ $(document).on('keyup', function(event){
   }
 
   if(remainingGuesses == 0){
+
     setTimeout(function(){
       alert('Game over')
     }, 50)
   }
+var reset = function(){
+  
 
+}
 
   $('.remaining-guesses').html(remainingGuesses)
 
